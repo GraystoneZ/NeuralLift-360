@@ -1,7 +1,15 @@
-prefix = 'cabin4'
-
 import numpy as np
 import cv2
+import argparse
+import os
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--prefix', type=str, required=True, help='original input file name')
+parser.add_argument('--path', type=str, required=True, help='path to preprocess directory')
+args = parser.parse_args()
+
+# prefix = f"{args.path}/{args.prefix}"
+prefix = os.path.join(args.path, args.prefix)
 
 msk = cv2.imread(f"{prefix}_mask.png", 0) / 255
 depth = np.load(f"{prefix}.npy")

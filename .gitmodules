@@ -1,0 +1,3 @@
+[submodule "image-background-remove-tool"]
+	path = image-background-remove-tool
+	url = https://github.com/Ir1d/image-background-remove-tool.git
